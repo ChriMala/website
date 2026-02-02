@@ -66,7 +66,7 @@ nav ul li a:hover { color: var(--accent-yellow); }
     min-height: 80vh;
 }
 
-.hero h1 { font-size: 50px; margin: 0; }
+.hero h1 { font-size: 45px; margin: 0; }
 
 .about-image { position: relative; }
 .border-accent {
@@ -250,4 +250,5 @@ footer {
         max-width: 250px;
     }
 }
+
 
