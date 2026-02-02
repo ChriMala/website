@@ -1,0 +1,253 @@
+:root {
+    --bg-dark: #05070a;
+    --accent-yellow: #ffcc00;
+    --text-light: #ffffff;
+}
+
+/* Rende lo scorrimento fluido */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+span { color: var(--accent-yellow); }
+
+/* Header & Nav */
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgba(5, 7, 10, 0.9);
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10%;
+    align-items: center;
+}
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 14px; 
+    transition: color 0.3s;
+}
+
+nav ul li a:hover { color: var(--accent-yellow); }
+
+/* Placeholders */
+.img-placeholder {
+    width: 300px;
+    height: 400px;
+    background: #1e293b;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #475569;
+}
+
+/* Sezioni */
+.hero, .about {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 120px 10%;
+    min-height: 80vh;
+}
+
+.hero h1 { font-size: 50px; margin: 0; }
+
+.about-image { position: relative; }
+.border-accent {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--accent-yellow);
+    top: 15px;
+    left: -15px;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+.about-text { max-width: 500px; }
+.about-text h2 { font-size: 40px; margin-bottom: 20px; }
+
+/* Footer */
+footer {
+    padding: 100px 10%;
+    text-align: center;
+    border-top: 1px solid #1e293b;
+}
+
+.social-links {
+    display: flex;            /* Attiva il layout flessibile */
+    justify-content: center;  /* Centra i pulsanti orizzontalmente */
+    flex-wrap: wrap;          /* Se lo schermo è stretto, i pulsanti vanno a capo invece di sovrapporsi */
+    gap: 15px;                /* Crea uno spazio preciso tra un pulsante e l'altro */
+    margin-top: 30px;
+}
+
+.social-links a {
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid var(--accent-yellow);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    display: inline-block;    /* Fondamentale per far rispettare il padding */
+    white-space: nowrap;      /* Impedisce al testo (es. LinkedIn) di spezzarsi su due righe */
+}
+
+.social-links a:hover {
+    background: var(--accent-yellow);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+}
+
+.social-links a:hover {
+    background: var(--accent-yellow);
+    color: var(--bg-dark);
+}
+
+.logo-text {
+    font-size: 26px;        /* Dimensione del font */
+    font-weight: 800;       /* Grassetto molto marcato */
+    text-decoration: none;  /* Toglie la sottolineatura blu dei link */
+    color: #ffffff;         /* Colore bianco per la 'C' */
+    font-family: 'Montserrat', sans-serif; /* Assicurati che il font sia caricato */
+}
+
+.logo-text span {
+    color: #ffcc00;         /* Il giallo del tuo brand */
+    font-weight: 800;       /* Grassetto anche per la seconda parte */
+}
+
+.greeting {
+    color: #ffcc00;         /* Il giallo del tuo logo */
+    font-weight: 800;       /* Grassetto massimo */
+    font-size: 1.2rem;      
+}
+
+/* Stile per tutte le immagini del sito */
+.hero-image img, .about-image img {
+    width: 100%;
+    max-width: 550px; /* Regola questa larghezza in base ai tuoi gusti */
+    height: auto;
+    border-radius: 20px; /* Bordi arrotondati come su Figma */
+    display: block;
+    object-fit: cover;
+}
+
+.hero-image, .about-image {
+    position: relative; 
+    display: inline-block; /* Serve per far sì che il div sia grande quanto la foto */
+}
+
+.btn-show {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background-color: #ffcc00; /* Giallo del tuo brand */
+    color: #05070a;            /* Testo scuro per contrasto */
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.btn-show:hover {
+    background-color: #ffffff; /* Diventa bianco al passaggio del mouse */
+    transform: translateY(-3px); /* Piccola animazione verso l'alto */
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.3);
+}
+
+.btn-container {
+    display: flex;
+    gap: 15px;       /* Spazio tra i due bottoni */
+    margin-top: 25px;
+}
+
+
+/* Media Query per Smartphone (schermi sotto i 768px) */
+@media (max-width: 768px) {
+    
+    /* 1. Navbar: mettiamo il logo sopra e il menu sotto */
+    nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 5%;
+    }
+
+    nav ul {
+        gap: 15px;
+        padding: 0;
+    }
+
+    /* 2. Hero & About: le colonne diventano una sopra l'altra */
+    .hero, .about {
+        flex-direction: column; /* Invece di essere affiancati, vanno in verticale */
+        text-align: center;
+        padding: 40px 5%;
+        min-height: auto;
+    }
+
+    .hero-image, .about-image {
+        order: -1; /* Mette la foto SOPRA il testo nel mobile */
+        margin-bottom: 30px;
+    }
+
+    .hero-image img, .about-image img {
+        max-width: 250px; /* Foto leggermente più piccole su mobile */
+    }
+
+    /* 3. Titoli e Bottoni */
+    .hero-content h1 {
+        font-size: 32px; /* Riduce il titolo per non farlo andare a capo male */
+    }
+
+    .btn-container {
+        justify-content: center; /* Centra i bottoni ITA/ENG */
+        flex-wrap: wrap; /* Se non ci stanno, uno va sotto l'altro */
+    }
+
+    /* 4. Griglie (Services, Portfolio, Experiences) */
+    .services-grid, .exp-grid, .portfolio-grid {
+        grid-template-columns: 1fr; /* Una sola colonna invece di tre */
+        gap: 20px;
+    }
+
+    .portfolio-grid {
+        grid-template-rows: auto; /* Toglie l'altezza fissa della griglia */
+    }
+
+    .large {
+        grid-row: span 1; /* Le immagini grandi tornano normali */
+    }
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        gap: 10px;
+        padding: 0 10px;
+    }
+    
+    .social-links a {
+        width: 100%; /* Opzionale: rende i pulsanti larghi quanto lo schermo su mobile */
+        max-width: 250px;
+    }
+}
+
